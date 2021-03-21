@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
   canvas2.render();
 
   let list = getId('shape-points');
-  let pointList = new PointList(list, 5);
+  let pointList = new PointList(list, 4);
 
   getId('add-shape-points').addEventListener('click', () => pointList.append());
 

@@ -36,10 +36,6 @@ class AdaptableCanvas {
 
     this.fitParent = fitParent;
 
-    // this.renderFun = Array.isArray(render)
-    //   ? render.map(cb => () => cb(this.getParams()))
-    //   : [() => render(this.getParams())];
-
     this.renderFun = assingRenderFun(render, () => this.getParams());
 
     this.canvas.style.backgroundColor = bgColor;

@@ -42,6 +42,7 @@ canvas {
 
 .graph-controls {
   display: flex;
+  padding: 5px 10px;
 }
 
 .graph-controls > * {
