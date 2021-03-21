@@ -2,6 +2,11 @@ import { MouseHandler } from './mouse-handler';
 import { renderGrid } from './render-grid';
 import { dark, superLight } from './../colors';
 
+const assingRenderFun = (cbs, params) =>
+  Array.isArray(cbs)
+    ? cbs.map(cb => () => cb(params()))
+    : [() => cbs(params())];
+
 class AdaptableCanvas {
   constructor({
     canvas,
@@ -31,9 +36,11 @@ class AdaptableCanvas {
 
     this.fitParent = fitParent;
 
-    this.renderFun = Array.isArray(render)
-      ? render.map(cb => () => cb(this.getParams()))
-      : [() => render(this.getParams())];
+    // this.renderFun = Array.isArray(render)
+    //   ? render.map(cb => () => cb(this.getParams()))
+    //   : [() => render(this.getParams())];
+
+    this.renderFun = assingRenderFun(render, () => this.getParams());
 
     this.canvas.style.backgroundColor = bgColor;
   }
@@ -101,6 +108,10 @@ class AdaptableCanvas {
     if (this.drawGrid) {
       renderGrid(this);
     }
+  }
+
+  changeRenderFun(cbs) {
+    this.renderFun = assingRenderFun(cbs, () => this.getParams());
   }
 }
 

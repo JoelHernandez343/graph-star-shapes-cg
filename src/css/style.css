@@ -11,6 +11,7 @@ section {
 
 section > aside {
   flex-basis: 400px;
+  overflow-y: auto;
 }
 
 section > div {
@@ -25,6 +26,24 @@ canvas {
   cursor: grab;
 }
 
-#break {
-  height: 1000px;
+.point-input {
+  display: grid;
+  grid-template-columns: 30px auto 30px auto auto;
+  padding: 5px 10px;
+}
+
+.point-input > * {
+  padding: 0 10px;
+}
+
+.point-input > input {
+  width: 100%;
+}
+
+.graph-controls {
+  display: flex;
+}
+
+.graph-controls > * {
+  flex-grow: 1;
 }

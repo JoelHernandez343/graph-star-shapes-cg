@@ -1,6 +1,9 @@
 import '../css/style.css';
 import { drawStar, drawShape } from './modules/graph';
 import { AdaptableCanvas } from './modules/adaptable-canvas';
+import { renderItems } from './modules/sorteable-list';
+import { PointList } from './modules/ui';
+import { getId } from './modules/tools';
 
 const graph = ({ ctx }) => {
   let shape = [
@@ -14,26 +17,33 @@ const graph = ({ ctx }) => {
   drawStar(shape, { x: 160, y: 110 }, '#C70039', ctx, 3);
 };
 
-const graph2 = ({ ctx, fixedOrigin: { x, y } }) => {
-  ctx.beginPath();
-  ctx.strokeStyle = '#C70039';
-  ctx.moveTo(x + 200, y + 200);
-  ctx.lineTo(x + 400, y + 400);
-  ctx.stroke();
-  ctx.closePath();
-};
-
 window.addEventListener('load', () => {
   let canvas = new AdaptableCanvas({
-    canvas: document.getElementById('shape'),
+    canvas: getId('shape'),
     gridSize: 20,
-    render: [graph, graph2],
   });
   canvas.render();
 
   let canvas2 = new AdaptableCanvas({
-    canvas: document.getElementById('star-shape'),
-    gridSize: 50,
+    canvas: getId('star-shape'),
+    gridSize: 20,
   });
   canvas2.render();
+
+  let list = getId('shape-points');
+  let pointList = new PointList(list, 5);
+
+  getId('add-shape-points').addEventListener('click', () => pointList.append());
+
+  getId('graph-shape').addEventListener('click', () => {
+    let shape = pointList.getAllPoints();
+
+    canvas.changeRenderFun(({ ctx }) => {
+      drawShape(shape, '#42A5F6', ctx, 3);
+    });
+  });
+
+  getId('clear-shape').addEventListener('click', () => {
+    canvas.changeRenderFun(() => {});
+  });
 });
