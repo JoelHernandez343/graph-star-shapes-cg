@@ -1,5 +1,7 @@
+import { createE } from './../tools';
+
 const newButton = (content, id = '', cb) => {
-  let button = document.createElement('button');
+  let button = createE('button');
   button.innerText = content;
   button.addEventListener('click', cb);
 
@@ -7,10 +9,23 @@ const newButton = (content, id = '', cb) => {
 };
 
 const newLabel = content => {
-  let lbl = document.createElement('p');
+  let lbl = createE('p');
   lbl.innerText = content;
 
   return lbl;
 };
 
-export { newButton, newLabel };
+const newTr = items => {
+  let tr = createE('tr');
+
+  items.forEach(item => {
+    let td = createE('td');
+    td.innerText = item;
+
+    tr.appendChild(td);
+  });
+
+  return tr;
+};
+
+export { newButton, newLabel, newTr };

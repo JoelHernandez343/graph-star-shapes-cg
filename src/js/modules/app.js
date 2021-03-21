@@ -1,8 +1,8 @@
 import { getId } from './tools';
 import { Shape } from './geometry';
-import { PointList } from './ui';
 import { drawStar, drawShape } from './graph';
 import { AdaptableCanvas } from './adaptable-canvas';
+import { PointList, setPointsTable, setSegmentsTable } from './ui';
 
 class App {
   constructor() {
@@ -35,6 +35,9 @@ class App {
       this.shapeCanvas.changeRenderFun(({ ctx }) => {
         drawShape(this.shape.getPoints(), '#42A5F6', ctx, 3);
       });
+
+      setPointsTable(this.shape.getPoints(), getId('points-table'));
+      setSegmentsTable(this.shape.getSegments(), getId('segments-table'));
     });
     getId('clear-graph-bttn').addEventListener('click', () =>
       this.shapeCanvas.changeRenderFun(() => {})

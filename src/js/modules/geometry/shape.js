@@ -15,7 +15,7 @@ class Shape {
     let segments = [];
 
     let shape = [...this.points];
-    let before = shape.pop();
+    let before = shape.shift();
     shape.push(before);
 
     shape.forEach(current => {
