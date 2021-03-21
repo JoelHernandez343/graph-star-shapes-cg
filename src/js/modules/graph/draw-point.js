@@ -6,7 +6,8 @@ const drawPoint = ({ x, y }, number, color, ctx) => {
   ctx.fillStyle = color;
   ctx.font = '20px Verdana';
 
-  ctx.arc(x, y, 2, 0, 2 * Math.PI);
+  ctx.arc(x, y, 4, 0, 2 * Math.PI);
+  ctx.fill();
   ctx.fillText(`P${number}`, x + 10, y + 10);
 
   ctx.stroke();

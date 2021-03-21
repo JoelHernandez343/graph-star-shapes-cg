@@ -1,27 +1,41 @@
-import { drawPoint } from './draw-point';
+import { drawSegment } from './draw-segment';
 
-const drawShape = (originalShape, color, ctx, lineWidth = 1) => {
-  let shape = [...originalShape];
+const drawShape = (original, color, ctx, lineWidth = 1) => {
+  if (original.length === 0) {
+    return;
+  }
+
+  let shape = [...original];
   let begin = shape.pop();
-  let i = 0;
+  let before = begin;
+  let segment = 0;
 
-  ctx.save();
+  shape.forEach(current => {
+    drawSegment({
+      start: before,
+      end: current,
+      color,
+      ctx,
+      lineWidth,
+      segmentNumber: segment,
+      endNumber: segment,
+    });
 
-  ctx.lineWidth = lineWidth;
+    segment++;
+    before = current;
+  });
 
-  ctx.beginPath();
-  ctx.strokeStyle = color;
+  drawSegment({
+    start: before,
+    end: begin,
+    color,
+    ctx,
+    segmentNumber: segment,
+    endNumber: 0,
+    lineWidth,
+  });
 
-  ctx.moveTo(begin.x, begin.y);
-
-  shape.forEach(({ x, y }) => ctx.lineTo(x, y));
-  ctx.closePath();
-
-  ctx.stroke();
-
-  originalShape.forEach(point => drawPoint(point, i++, color, ctx));
-
-  ctx.restore();
+  return segment;
 };
 
 export { drawShape };

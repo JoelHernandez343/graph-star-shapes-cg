@@ -7,7 +7,7 @@ const newButton = (content, id = '', cb) => {
 };
 
 const newLabel = content => {
-  let lbl = document.createElement('lbl');
+  let lbl = document.createElement('p');
   lbl.innerText = content;
 
   return lbl;

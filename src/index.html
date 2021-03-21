@@ -4,32 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Práctica 2</title>
   </head>
   <body>
+    <aside>
+      <h1>Graficar figura</h1>
+      <h2>Agregar los puntos de la figura</h2>
+
+      <div class="controls">
+        <button id="add-points-bttn">Agregar punto</button>
+        <button id="clear-points-bttn">Limpiar puntos</button>
+      </div>
+      <section>
+        <ul id="shape-points"></ul>
+      </section>
+      <div class="controls">
+        <button id="graph-shape-bttn">Graficar</button>
+        <button id="clear-graph-bttn">Limpiar gráfica</button>
+      </div>
+
+      <h2>Puntos</h2>
+      <section></section>
+
+      <h2>Segmentos</h2>
+      <section></section>
+
+      <h2>Punto central de la figura estrellada</h2>
+      <div class="point-input">
+        <p>x</p>
+        <input id="center-point-x" />
+        <p>y</p>
+        <input id="center-point-y" />
+      </div>
+      <div class="controls">
+        <button id="graph-star-bttn">Graficar</button>
+        <button id="clear-star-bttn">Limpiar gráfica</button>
+      </div>
+    </aside>
+
     <main>
       <section>
-        <aside>
-          <h2>Graficar figura</h2>
-          <ul id="shape-points"></ul>
-          <div class="graph-controls">
-            <button id="add-shape-points">Agregar</button>
-            <button id="graph-shape">Graficar</button>
-            <button id="clear-shape">Limpiar</button>
-          </div>
-        </aside>
-        <div>
-          <canvas id="shape"></canvas>
-        </div>
+        <canvas id="shape"></canvas>
+        <h2>Figura</h2>
       </section>
       <section>
-        <aside>
-          <input type="text" />
-          <p>Hello worlds</p>
-        </aside>
-        <div>
-          <canvas id="star-shape"></canvas>
-        </div>
+        <canvas id="star-shape"></canvas>
+        <h2>Figura estrellada</h2>
       </section>
     </main>
   </body>

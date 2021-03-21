@@ -35,7 +35,7 @@ class InputPoint {
     let container = createE('div');
     this.container = container;
 
-    container.id = `__input_point_${id}__`;
+    // container.id = `__input_point_${id}__`;
     container.classList.add('point-input');
     container.draggable = true;
 
@@ -171,6 +171,10 @@ class PointList {
 
       throw e;
     }
+  }
+
+  clearAll() {
+    this.inputs.forEach(input => input.setRawPoint({ x: '', y: '' }));
   }
 }
 

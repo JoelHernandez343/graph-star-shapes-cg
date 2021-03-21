@@ -1,24 +1,26 @@
+import { drawShape } from './draw-shape';
 import { drawPoint } from './draw-point';
+import { drawSegment } from './draw-segment';
 
 const drawStar = (shape, center, color, ctx, lineWidth = 1) => {
-  ctx.save();
+  if (shape.length === 0) {
+    return;
+  }
 
-  ctx.beginPath();
+  let segments = drawShape(shape, color, ctx, lineWidth);
+  drawPoint(center, segments, color, ctx);
 
-  ctx.strokeStyle = color;
-  ctx.lineWidth = lineWidth;
-
-  ctx.moveTo(center.x, center.y);
-
-  shape.forEach(({ x, y }) => {
-    ctx.lineTo(x, y);
-    ctx.stroke();
-    ctx.moveTo(center.x, center.y);
-  });
-
-  ctx.closePath();
-
-  ctx.restore();
+  shape.forEach(point =>
+    drawSegment({
+      start: center,
+      end: point,
+      color,
+      ctx,
+      segmentNumber: ++segments,
+      drawEnd: false,
+      lineWidth,
+    })
+  );
 };
 
 export { drawStar };
