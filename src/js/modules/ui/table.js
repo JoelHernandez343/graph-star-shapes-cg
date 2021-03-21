@@ -1,11 +1,16 @@
 import { newTr } from './common';
 
-const setPointsTable = (points, body) =>
+const setPointsTable = (points, body) => {
+  body.innerHTML = '';
   points.forEach(({ x, y }, index) => body.appendChild(newTr([index, x, y])));
+};
 
-const setSegmentsTable = (segments, body) =>
+const setSegmentsTable = (segments, body) => {
+  body.innerHTML = '';
+
   segments.forEach(([{ x: x1, y: y1 }, { x: x2, y: y2 }], index) =>
     body.appendChild(newTr([index, x1, y1, x2, y2]))
   );
+};
 
 export { setPointsTable, setSegmentsTable };
