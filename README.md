@@ -39,6 +39,10 @@ npm run build
 ## Uso - sin necesidad de nodejs
 Cuidado, puede que el archivo .zip contenga una versión antigua del proyecto.
 
-Descargue el archivo [`dist.zip`](https://drive.google.com/file/d/1iIaK_1-85g6bIKoC8FvFJaJ9v1ViahPK/view) alojado en Google Drive.
+Descargue el archivo [`dist.zip`](https://drive.google.com/file/d/1FV8m1F6i1HxcE_4GgFpehI9a-bpLQNnk/view?usp=sharing) alojado en Google Drive.
 
 Descomprímalo y abra `index.html` con su navegador de preferencia.
+
+## Capturas
+
+![screenshot01](./docs/images/sc01.png)
