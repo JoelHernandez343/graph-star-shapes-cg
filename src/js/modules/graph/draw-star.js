@@ -8,7 +8,7 @@ const drawStar = (shape, center, color, ctx, lineWidth = 1) => {
   }
 
   let segments = drawShape(shape, color, ctx, lineWidth);
-  drawPoint(center, segments, color, ctx);
+  drawPoint(center, segments + 1, color, ctx);
 
   shape.forEach(point =>
     drawSegment({

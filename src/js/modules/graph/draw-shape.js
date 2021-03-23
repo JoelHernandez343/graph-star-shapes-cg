@@ -6,7 +6,7 @@ const drawShape = (original, color, ctx, lineWidth = 1) => {
   }
 
   let shape = [...original];
-  let begin = shape.pop();
+  let begin = shape.shift();
   let before = begin;
   let segment = 0;
 
@@ -18,7 +18,7 @@ const drawShape = (original, color, ctx, lineWidth = 1) => {
       ctx,
       lineWidth,
       segmentNumber: segment,
-      endNumber: segment,
+      endNumber: segment + 1,
     });
 
     segment++;
