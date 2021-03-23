@@ -6,7 +6,7 @@ Este programa permite graficar polígonos y polígonos estrellados dado un conju
 
 Falta el cálculo del Kernel de la figura para verdaderamente comprobar si una figura es estrellada o no, y graficar automáticamente su versión extrellada.
 
-Investigando algoritmo, pero ya son las 5:41 am y no he dormido, mejor lo dejo así por el momento.
+Investigando algoritmo, pero no es necesario por el momento.
 
 ## Requisitos - ambiente de desarrollo
 - [Nodejs](https://nodejs.org/en/) v.15.12.0 o más actual.
