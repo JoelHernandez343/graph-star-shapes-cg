@@ -19,9 +19,13 @@ const isSimpleShape = segments => {
 };
 
 const getSegments = points => {
-  let segments = [];
+  if (points.length < 2) {
+    return [];
+  }
 
+  let segments = [];
   let shape = [...points];
+
   let before = shape.shift();
   shape.push(before);
 

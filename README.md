@@ -46,5 +46,8 @@ Descargue el archivo [`dist.zip`](https://drive.google.com/drive/folders/1RDfikT
 Descomprímalo y abra `index.html` con su navegador de preferencia.
 
 ## Capturas
-
+Polígono simple:
 ![screenshot01](./docs/images/sc01.png)
+
+Polígono no simple:
+![screenshot02](./docs/images/sc02.png)

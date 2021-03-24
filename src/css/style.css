@@ -9,10 +9,6 @@ body {
   height: 100vh;
 }
 
-body > aside {
-  flex-basis: 400px;
-}
-
 main {
   flex-grow: 1;
   display: flex;
@@ -29,7 +25,9 @@ main > section {
   position: relative;
 }
 
-main > section > h2 {
+main > section > h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -48,7 +46,8 @@ canvas {
 
 body > aside {
   overflow-y: auto;
-  padding: 10px;
+  padding: 25px;
+  flex-basis: 400px;
 }
 
 body > aside > section {
@@ -70,52 +69,73 @@ body > aside > section {
   width: 100%;
 }
 
-.controls {
-  display: flex;
-  padding: 5px 10px;
+.point-input > p {
+  padding: 10px;
+  margin: 0;
 }
 
-.controls > * {
-  flex-basis: 50%;
+.controls {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.controls > button {
+  font-family: 'Poppins', sans-serif;
+  padding: 5px 0px;
+  margin: 0px 10px;
 }
 
 table {
   width: 100%;
+  border-collapse: collapse;
 }
 
 table,
 td {
-  border: 1px solid #333;
+  border: 1px solid #222222;
 }
 
-thead,
-tfoot {
-  background-color: #333;
+thead {
+  background-color: #222222;
   color: #fff;
+}
+
+th {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 0;
+}
+
+td {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 6px;
 }
 
 h1 {
   color: #111;
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.1rem;
   font-weight: bold;
   letter-spacing: -1px;
-  line-height: 1;
+  line-height: 3.2rem;
 }
 
 h2 {
   color: #111;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 300;
-  line-height: 32px;
-  margin: 0 0 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 25px;
+  margin: 6px 0 10px;
 }
 
 p {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 14px;
-  line-height: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1rem;
   margin: 0 0 10px;
   text-align: justify;
   text-justify: inter-word;
