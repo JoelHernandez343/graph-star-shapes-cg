@@ -2,17 +2,19 @@
 ## Descripción
 Este programa permite graficar polígonos y polígonos estrellados dado un conjunto de puntos.
 
-### Actualización 23 de Marzo 2021
-
-Valida si el conjunto de puntos ordenados producen un polígono simple o no.
+- Puede agregar más puntos si son necesarios o limpiar los campos.
+- Con el botón `x` a la derecha puede eliminar el punto en cuestión.
+- Además, puede reordenar los puntos simplemente arrastrando sobre los elementos.
+- Puede mover las gráficas arrastrándolas con el ratón.
+- Valida si el conjunto de puntos ordenados genera un polígono simple o no. (Actualización 23 de Marzo 2021)
 
 ### Posible actualización
 
-Falta el cálculo del Kernel de la figura para comprobar si una figura es estrellada o no, y graficar automáticamente su versión extrellada.
+El cálculo del Kernel de la figura para comprobar si una figura es estrellada o no, y graficar automáticamente su versión extrellada.
 
 ## Requisitos - ambiente de desarrollo
-- [Nodejs](https://nodejs.org/en/) v.15.12.0 o más actual.
-- NPM, viene con nodejs
+- [Node.js](https://nodejs.org/en/) v.15.12.0 o más actual.
+- NPM, viene con Node.js
 - Conexión a internet para la instalación de dependencias.
 
 ## Uso - ambiente de desarrollo
@@ -38,10 +40,10 @@ Para construir la versión de producción:
 npm run build
 ```
 
-## Uso - sin necesidad de nodejs
+## Uso - sin necesidad de Node.js
 Cuidado, puede que el archivo .zip contenga una versión antigua del proyecto.
 
-Descargue el archivo [`dist.zip`](https://drive.google.com/drive/folders/1RDfikT-g2usCdKXhdH8udqDQb8f5OwMX?usp=sharing) alojado en Google Drive.
+Descargue el archivo [`dist-<fecha>-v<n>.zip`](https://drive.google.com/drive/folders/1RDfikT-g2usCdKXhdH8udqDQb8f5OwMX?usp=sharing) alojado en Google Drive.
 
 Descomprímalo y abra `index.html` con su navegador de preferencia.
 
