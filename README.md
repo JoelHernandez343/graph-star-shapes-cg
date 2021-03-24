@@ -1,4 +1,4 @@
-# Grafica de figuras estrelladas
+# Gráfica de figuras estrelladas
 ## Descripción
 Este programa permite graficar polígonos y polígonos estrellados dado un conjunto de puntos.
 
