@@ -32,6 +32,14 @@ class App {
     getId('graph-shape-bttn').addEventListener('click', () => {
       this.shape = new Shape(this.pointList.getAllPoints());
 
+      let isSimple = this.shape.isSimpleShape();
+      let msg =
+        isSimple === true
+          ? 'El polígono es simple!'
+          : `El polígono no es simple, al menos los segmentos ${isSimple[0]} y ${isSimple[1]} se intersectan`;
+
+      alert(msg);
+
       this.shapeCanvas.changeRenderFun(({ ctx }) => {
         drawShape(this.shape.getPoints(), '#42A5F6', ctx, 3);
       });

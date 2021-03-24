@@ -2,11 +2,13 @@
 ## Descripción
 Este programa permite graficar polígonos y polígonos estrellados dado un conjunto de puntos.
 
-**PENDIENTE**
+### Actualización 23 de Marzo 2021
 
-Falta el cálculo del Kernel de la figura para verdaderamente comprobar si una figura es estrellada o no, y graficar automáticamente su versión extrellada.
+Valida si el conjunto de puntos ordenados producen un polígono simple o no.
 
-Investigando algoritmo, pero no es necesario por el momento.
+### Posible actualización
+
+Falta el cálculo del Kernel de la figura para comprobar si una figura es estrellada o no, y graficar automáticamente su versión extrellada.
 
 ## Requisitos - ambiente de desarrollo
 - [Nodejs](https://nodejs.org/en/) v.15.12.0 o más actual.
